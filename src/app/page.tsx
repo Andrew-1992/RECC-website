@@ -1,65 +1,118 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Hero from "@/components/sections/Hero";
+import ServicesSection from "@/components/sections/Services";
+import ProjectsSection from "@/components/sections/Projects";
+import Contact from "@/components/sections/Contact";
+import TestimonialsSlider from "@/components/sections/Testimonials";
+
+// Reusable Reveal Wrapper for consistency
+const Reveal = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.8, ease: "easeOut", delay }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="relative min-h-screen bg-white overflow-hidden">
+      
+      {/* 1. Hero */}
+      <Hero />
+
+      {/* 2. Services Reveal */}
+      <section id="services" className="py-10">
+        <Reveal>
+          <ServicesSection />
+        </Reveal>
+      </section>
+
+      {/* 3. UPDATED: Unique Selling Point (USP) - White Theme + Image */}
+      <section className="py-32 bg-white text-black border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          
+          <Reveal delay={0.2}>
+            <div className="space-y-8">
+              <span className="text-brand-red font-mono text-xs uppercase tracking-[0.5em] block font-bold">
+                The RECL Advantage
+              </span>
+              <h2 className="text-4xl md:text-4xl font-black uppercase mb-8 leading-[0.9] tracking-tighter">
+                Who We Are 
+              </h2>
+              <p className="text-gray-600 text-lg max-w-lg leading-relaxed border-l-4 border-brand-red pl-6 normal">
+                <strong>Rammed Earth Construction Co.Ltd</strong> is dedicated to delivering sustainable, durable, and innovative building solutions. Specializing in rammed earth construction, architectural design, and general construction, the company blends eco-friendly techniques with modern engineering to create functional and visually striking spaces. With a strong commitment to quality, efficiency, and client satisfaction, Rammed Earth Construction Company partners with clients to bring projects from concept to completion—building structures that stand the test of time.
+              </p>
+              
+              <div className="grid grid-cols-1 gap-4">
+                {["100% Sustainable", "Thermal Regulation", "Low Carbon Footprint"].map((text, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 + (i * 0.1) }}
+                    className="flex items-center gap-4 font-black uppercase tracking-widest text-[10px] text-gray-800"
+                  >
+                    <span className="w-6 h-6 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red font-bold">✓</span> 
+                    {text}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Image Side: Finished Building Upload */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative group"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            {/* Visual Frame Decor */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-brand-red z-0" />
+            
+            <div className="relative aspect-[4/5] bg-neutral-100 overflow-hidden shadow-2xl z-10">
+              <Image 
+                src="/rammed-earth.jpg" // Ensure this file exists in your /public folder
+                alt="Finished Rammed Earth Building"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+              />
+              
+              {/* Overlay Badge */}
+              <div className="absolute bottom-0 right-0 bg-black text-white p-6 min-w-[200px]">
+                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 mb-1">Structural Tech</p>
+                <p className="text-lg font-black uppercase tracking-tighter text-brand-red">High-Density Earth</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* 4. Portfolio & Social Proof */}
+      <section className="py-20">
+        <Reveal>
+          <ProjectsSection />
+        </Reveal>
+      </section>
+
+      <Reveal delay={0.1}>
+        <TestimonialsSlider />
+      </Reveal>
+
+      {/* 5. Contact Zone */}
+      <section id="contact" className="py-20 bg-gray-50">
+        <Reveal>
+          <Contact />
+        </Reveal>
+      </section>
+      
+    </main>
   );
 }
