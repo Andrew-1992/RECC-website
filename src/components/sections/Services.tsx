@@ -1,25 +1,24 @@
-// 1. MUST HAVE "use client" at the very top for Framer Motion to work
 "use client";
-
-// 2. IMPORT motion from framer-motion
 import { motion } from "framer-motion";
 import React from "react";
+// Import the new icons
+import { Landmark, DraftingCompass, HardHat } from "lucide-react";
 
 const services = [
   {
     title: "Rammed Earth Construction",
     desc: "Sustainable, thermal-efficient wall systems using local South Sudanese soil.",
-    icon: "🏗️"
+    icon: <Landmark className="w-12 h-12" />
   },
   {
     title: "Architectural Design",
     desc: "Modern aesthetics blended with traditional sustainable practices.",
-    icon: "📐"
+    icon: <DraftingCompass className="w-12 h-12" />
   },
   {
     title: "General Construction",
     desc: "End-to-end project management for residential and commercial sites.",
-    icon: "🏢"
+    icon: <HardHat className="w-12 h-12" />
   }
 ];
 
@@ -29,7 +28,7 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* TITLE HEADING */}
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -42,16 +41,13 @@ export default function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-4xl font-black uppercase tracking-tighter text-black"
+            className="text-4xl md:text-4xl font-black capitalize tracking-tighter text-black"
           >
             Our Services
           </motion.h2>
         </div>
 
-        {/* UPDATED GRID: 
-          - gap-8 separates the cards
-          - Removed the global border-t and border-l 
-        */}
+        {/* UPDATED GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((s, i) => (
             <motion.div 
@@ -65,19 +61,13 @@ export default function ServicesSection() {
                 color: "#fff",
                 y: -10 
               }}
-              /* CARD STYLING:
-                - text-center aligns all content to the middle
-                - border-black on all sides for individual separation
-              */
               className="p-12 border border-black transition-all duration-300 group cursor-default text-center flex flex-col items-center"
             >
-              {/* Centered Icon */}
-              <span className="text-5xl mb-8 block">{s.icon}</span>
+              {/* Modern SVG Icon - Colored Red on White, turns White on Hover */}
+              <div className="mb-8 text-brand-red group-hover:text-white transition-colors duration-300">
+                {s.icon}
+              </div>
               
-              {/* Lowercased Title: 
-                - Removed uppercase class
-                - Capitalized first letter via standard text
-              */}
               <h3 className="text-2xl font-bold mb-4 capitalize leading-tight">
                 {s.title}
               </h3>

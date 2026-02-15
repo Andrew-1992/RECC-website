@@ -43,13 +43,13 @@ export default function Projects() {
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        {/* UPDATED: Red decorative bar removed, centering maintained */}
+        <div className="flex flex-col items-center justify-center mb-16 gap-8 text-center">
           <div>
-            <h2 className="text-4xl font-black uppercase mb-4 text-black">Our Work</h2>
-            <div className="h-2 w-24 bg-brand-red" />
+            <h2 className="text-4xl font-black capitalize mb-4 text-black">Our work</h2>
           </div>
           
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-4 flex-wrap justify-center">
             {categories.map(cat => (
               <button 
                 key={cat}
