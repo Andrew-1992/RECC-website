@@ -1,5 +1,3 @@
-// src/lib/data.ts  <-- Ensure there are TWO slashes here
-
 export interface Project {
   id: string;
   title: string;
@@ -7,35 +5,35 @@ export interface Project {
   year: string;
   description: string;
   image: string;
-  category: 'Residential' | 'Commercial' | 'Public';
+  category: 'Residential' | 'Commercial' | 'Public'; // Strictly typed
 }
 
 export const PROJECTS: Project[] = [
   {
     id: '01',
-    title: 'The High Desert Retreat',
-    location: 'Joshua Tree, CA',
+    title: 'Ayendit Bilyang Hospital',
+    location: 'Bilyang, Juba',
     year: '2023',
-    description: 'A thermal-mass focused residential build utilizing local iron-rich soils.',
-    image: 'https://images.unsplash.com/photo-1518005020251-58296d8fca00',
-    category: 'Residential',
+    description: 'A high-performance healthcare facility utilizing stabilized rammed earth for superior thermal mass and hygiene.',
+    image: '/ayen.jpg', 
+    category: 'Commercial',
   },
   {
     id: '02',
-    title: 'Earthbound Winery',
-    location: 'Sonoma, CA',
+    title: 'Peace Garden Arts Center',
+    location: 'Luri, Juba',
     year: '2024',
-    description: 'Curved rammed earth walls designed for natural temperature regulation.',
-    image: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85',
+    description: 'Curved rammed earth walls designed for natural temperature regulation and acoustic excellence.',
+    image: '/peace.jpg', 
     category: 'Commercial',
   },
   {
     id: '03',
-    title: 'Canyon Pavilion',
-    location: 'Moab, UT',
+    title: 'Thongpiny Apartments',
+    location: 'Thongpiny Area, Juba', // Fixed casing for consistency
     year: '2025',
-    description: 'A community structure that blends seamlessly into the sandstone landscape.',
-    image: 'https://images.unsplash.com/photo-14491560015dd-c3d98bd9b7af',
-    category: 'Public',
+    description: 'Sustainable urban housing designed to blend seamlessly into the sandstone landscape.',
+    image: '/thong.jpg',
+    category: 'Residential',
   },
 ];
