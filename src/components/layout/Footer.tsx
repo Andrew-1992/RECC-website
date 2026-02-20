@@ -18,7 +18,7 @@ export default function Footer() {
               <li><Link href="/services" className="hover:text-white transition-colors">Rammed Earth Construction</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Architectural Design</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">General Construction</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Soil Analysis & Testing</Link></li>
+              
             </ul>
           </div>
 

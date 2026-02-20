@@ -9,7 +9,7 @@ const values = [
 ];
 
 const team = [
-  { name: "Eng. Chatim Gai Chatiem", role: "Founder & Lead Engineer", img: "/chatim.jpg" },
+  { name: "Eng. Chatim Gai Chatiem", role: "Founder & Lead Engineer", img: "/chatiem.jpg" },
   { name: "Adhar Machar Malok", role: "Lead Architect", img: "/adhar.jpg" },
   { name: "Thereza Aloung", role: "Head Logistics & Procurement", img: "/aloung.jpg" },
 ];

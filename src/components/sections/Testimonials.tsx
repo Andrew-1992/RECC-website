@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "RECL transformed our vision for the Nile Eco-Resort into a sustainable masterpiece. The thermal properties of the walls are incredible.",
-    author: "James Laku",
-    role: "CEO, Nile Horizons"
+    quote: "REC Co.Ltd renovated  and transformed the Ministry building into a master piece work",
+    author: "Mrs. Nadia Arop",
+    role: "Former, Minister of Culture & Heritage"
   },
   {
     quote: "Professionalism and local expertise. They understand the South Sudanese climate better than any international firm we've worked with.",
-    author: "Sarah Deng",
-    role: "Project Manager, Juba Urban Dev"
+    author: "Health Forum Organization",
+    role: "National NGO"
   }
 ];
 

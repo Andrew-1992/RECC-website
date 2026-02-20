@@ -28,6 +28,8 @@ const projects = [
     size: "md:col-span-1", 
     image: "/thong.jpg" 
   },
+
+
   { 
     id: 4, 
     title: "Entrepreneurship Hub Juba", 

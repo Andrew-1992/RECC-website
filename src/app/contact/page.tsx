@@ -44,12 +44,12 @@ export default function ContactPage() {
               <ContactDetail 
                 icon={<MapPin className="text-red-600" />} 
                 title="Location" 
-                detail="Plot 42, Hai Malakal, Juba, South Sudan" 
+                detail="Cyierdit Building, Juba town, South Sudan" 
               />
               <ContactDetail 
                 icon={<Phone className="text-red-600" />} 
                 title="Direct Line" 
-                detail="+211 920 000 000" 
+                detail="+211 923 228 220" 
               />
               <ContactDetail 
                 icon={<Mail className="text-red-600" />} 
@@ -127,7 +127,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="bg-black text-white p-6 shadow-2xl text-center">
             <h4 className="font-black capitalize mb-2">Visit our office</h4>
-            <p className="text-xs text-gray-400">Juba, South Sudan — Hai Malakal District</p>
+            <p className="text-xs text-gray-400">Juba town, South Sudan — Cyierdit Building</p>
           </div>
         </div>
         <div className="w-full h-full bg-gray-300 bg-center opacity-50" />

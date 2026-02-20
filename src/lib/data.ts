@@ -5,7 +5,7 @@ export interface Project {
   year: string;
   description: string;
   image: string;
-  category: 'Residential' | 'Commercial' | 'Public'; // Strictly typed
+  category: 'Residential' | 'Commercial' | 'Public';
 }
 
 export const PROJECTS: Project[] = [
@@ -30,10 +30,11 @@ export const PROJECTS: Project[] = [
   {
     id: '03',
     title: 'Thongpiny Apartments',
-    location: 'Thongpiny Area, Juba', // Fixed casing for consistency
+    location: 'Thongpiny Area, Juba',
     year: '2025',
     description: 'Sustainable urban housing designed to blend seamlessly into the sandstone landscape.',
     image: '/thong.jpg',
     category: 'Residential',
   },
+  
 ];
